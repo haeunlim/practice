@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "1:1문의"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-success chk_all_btn"><i
+                                        class="mdi mdi-check"></i>
+                                    전체<span class="d-md-inline-block d-none">선택</span></button>
+                                <button type="button" class="btn btn-secondary all_release_btn"><i
+                                        class="mdi mdi-close"></i> <span class="d-md-inline-block d-none">
+                                        선택</span>해제</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#primary-header-modal"><i class="mdi mdi-delete"></i>
+                                        <span class="d-md-inline-block d-none">선택</span>삭제</button>
+                                </div>
+                                <div class="search-form-wrap">
+                                    <form class="row gy-2 gx-1 gy-md-3 gx-md-2">
+                                        <div class="col-12 col-md-5 d-flex  flex-wrap align-items-center">
+                                            <label for="search_select" class="flex-shrink-0 search-labels">검색</label>
+                                            <div class="search-input-box d-flex">
+                                                <div class="col-4 pe-1">
+                                                    <select class="form-select" id="search_select">
+                                                        <option selected>구분</option>
+                                                        <option>제목</option>
+                                                        <option>작성자</option>
+                                                        <option>연락처</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-8"><input type="search" class="form-control"
+                                                        id="search_title" placeholder="검색어를 입력하세요"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="d-flex  flex-wrap align-items-center">
+                                                <label for="reportrange"
+                                                    class="flex-shrink-0 search-labels">기간검색</label>
+                                                <div class="search-input-box">
+                                                    <div id="reportrange" class="form-control"
+                                                        data-toggle="date-picker-range"
+                                                        data-target-display="#selectedValue"
+                                                        data-cancel-class="btn-light">
+                                                        <i class="mdi mdi-calendar"></i>&nbsp;<span
+                                                            id="selectedValue"></span>
+                                                        <i class="mdi mdi-menu-down"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 col-md-2 text-center text-md-start">
+                                            <button type="button" class="btn btn-primary my-0"><i
+                                                    class="mdi mdi-magnify search-icon"></i> 검색<span
+                                                    class="d-md-inline-block d-none">하기</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-ellipsis="3" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" class="form-check-input" id="checkall" name="data_chk">
+                                                </th>
+                                                <th>번호</th>
+                                                <th>구분</th>
+                                                <th>제목</th>
+                                                <th>작성자</th>
+                                                <th>연락처</th>
+                                                <th>이메일</th>
+                                                <th>등록일</th>
+                                                <th>상태</th>
+                                                <th>관리</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td>
+                                                    <span>회원</span>
+                                                </td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html"> 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다. 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다.1:1문의 제목이 들어갑니다.</a>
+                                                </td>
+                                                <td>
+                                                    <span>홍길동</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-3994-4545</span>
+                                                </td>
+                                                <td>
+                                                    <span>uwal123456@uwal.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <select class="form-select" id="member_grade">
+                                                        <option selected>답변완료</option>
+                                                        <option>접수완료</option>
+                                                        <option>처리중</option>
+                                                    </select></td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html" class="action-icon"> <i class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td>
+                                                    <span>회원</span>
+                                                </td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html">1:1문의 제목이 들어갑니다
+                                                    </a>
+                                                <td>
+                                                    <span>홍길동</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-3994-4545</span>
+                                                </td>
+                                                <td>
+                                                    <span>uwal123456@uwal.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td><select class="form-select" id="member_grade">
+                                                        <option selected>답변완료</option>
+                                                        <option>접수완료</option>
+                                                        <option>처리중</option>
+                                                    </select></td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td>
+                                                    <span>조사원</span>
+                                                </td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html"> 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다. 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다.1:1문의 제목이 들어갑니다.</a>
+                                                </td>
+                                                <td>
+                                                    <span>홍길동</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-3994-4545</span>
+                                                </td>
+                                                <td>
+                                                    <span>uwal123456@uwal.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td><select class="form-select" id="member_grade">
+                                                        <option selected>답변완료</option>
+                                                        <option>접수완료</option>
+                                                        <option>처리중</option>
+                                                    </select></td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td>
+                                                    <span>사업진행</span>
+                                                </td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html"> 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다. 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다.1:1문의 제목이 들어갑니다.</a>
+                                                </td>
+                                                <td>
+                                                    <span>홍길동</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-3994-4545</span>
+                                                </td>
+                                                <td>
+                                                    <span>uwal123456@uwal.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td><select class="form-select" id="member_grade">
+                                                        <option selected>답변완료</option>
+                                                        <option>접수완료</option>
+                                                        <option>처리중</option>
+                                                    </select></td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td>
+                                                    <span>회원</span>
+                                                </td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html"> 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다. 1:1문의 제목이 들어갑니다 1:1문의 제목이 들어갑니다.1:1문의 제목이 들어갑니다.</a>
+                                                </td>
+                                                <td>
+                                                    <span>홍길동</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-3994-4545</span>
+                                                </td>
+                                                <td>
+                                                    <span>uwal123456@uwal.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td><select class="form-select" id="member_grade">
+                                                        <option selected>답변완료</option>
+                                                        <option>접수완료</option>
+                                                        <option>처리중</option>
+                                                    </select></td>
+                                                <td>
+                                                    <a href="board_inquiry_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

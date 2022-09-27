@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "시스템 정보관리"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page write-page full">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "시스템 정보관리"})
+                <!-- end page title -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="btn-wrap text-end">
+                                        <button type="submit" class="btn btn-primary"><i
+                                                class="mdi mdi-plus-circle me-1"></i> 등록<span class="d-md-inline-block d-none">하기</span></button>
+                                    </div>
+                                <!-- nav -->
+                                <ul class="nav nav-pills bg-nav-pills nav-justified mt-4">
+                                    <li class="nav-item">
+                                        <a href="#basic_info" data-bs-toggle="tab" aria-expanded="false"
+                                            class="nav-link rounded-0 active">
+                                            <i class="mdi mdi-account-circle fs-3"></i>
+                                            <span class="d-none d-lg-block">기본정보</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#meta_info" data-bs-toggle="tab" aria-expanded="true"
+                                            class="nav-link rounded-0">
+                                            <i class="mdi mdi-code-not-equal-variant fs-3"></i>
+                                            <span class="d-none d-lg-block">메타 및 기본정보</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#company_info" data-bs-toggle="tab" aria-expanded="false"
+                                            class="nav-link rounded-0">
+                                            <i class="mdi mdi-office-building-cog fs-3"></i>
+                                            <span class="d-none d-lg-block">회사정보</span>
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- tab-content -->
+                                <div class="tab-content">
+                                    <!-- 기본정보-->
+                                    <div class="tab-pane show active" id="basic_info">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="mt-4 mb-3 text-center text-md-start">기본정보</h4>
+                                                <form class="write-col_wrap row gx-4 gy-0">
+                                                    <div class="write-col col-md-6">
+                                                        <label for="platform_name" class="write-label">플랫폼
+                                                            명</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text"
+                                                                id="platform_name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="domain" class="write-label">도메인</label>
+                                                        <div class="input-wrap">
+                                                            <div class="input-group">
+                                                                <label class="input-group-text">https://</label>
+                                                                <input class="form-control" type="text" id="domain" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="admin_id" class="write-label">아이디</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="email" id="admin_id" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="admin_pw" class="write-label">비밀번호</label>
+                                                        <div class="input-wrap">
+                                                            <div class="input-group">
+                                                                <input class="form-control" type="password"
+                                                                    id="admin_pw" />
+                                                                <input class="form-control" type="password"
+                                                                    id="admin_pw2" placeholder="비밀번호 확인" />
+                                                                <button class="btn btn-dark" type="button">수정</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="admin_tel" class="write-label">관리자
+                                                            연락처</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="admin_tel"></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="admin_email" class="write-label">관리자
+                                                            이메일</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="admin_email" />
+                                                        </div>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+
+                                        </div> <!-- end row-->
+                                    </div>
+                                    <!-- End 기본정보-->
+
+                                    <!-- 메타 및 기본정보-->
+                                    <div class="tab-pane" id="meta_info">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="mt-4 mb-3 text-center text-md-start">메타 및 기본정보</h4>
+                                                <form class="write-col_wrap row gx-4 gy-0">
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="broswer_ttl" class="write-label">브라우져
+                                                            타이틀</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="broswer_ttl"
+                                                                value="BioDiv" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="meta_tag" class="write-label">메타 태그</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="meta_tag" /></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="meta_keyword" class="write-label">메타
+                                                            키워드</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="email"
+                                                                id="meta_keyword" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_ttl" class="write-label">og:제목</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="og_ttl" /></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_desc" class="write-label">og:부가설명</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="og_desc"></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_url" class="write-label">og:url</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="og_url"></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_site_name" class="write-label">og:사이트이름</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="og_site_name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_img" class="write-label">og:이미지</label>
+                                                        <input class="form-control" type="file" id="og_img">
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="favico_img" class="write-label">Favico
+                                                            이미지</label>
+                                                        <div class="input-wrap"><input class="form-control" type="file"
+                                                                id="favico_img"></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="google_ver" class="write-label">구글
+                                                            verification</label>
+                                                        <div class="input-wrap"><input class="form-control" type="text"
+                                                                id="google_ver"></div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+
+                                                        <label for="og_add_desc" class="write-label">og:부가설명</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="og_add_desc">
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div> <!-- end row-->
+                                    </div>
+                                    <!-- End 메타 및 기본정보-->
+
+                                    <!-- 회사정보-->
+                                    <div class="tab-pane" id="company_info">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="mt-4 mb-3 text-center text-md-start">회사정보</h4>
+                                                <form class="write-col_wrap row gx-4 gy-0">
+                                                    <div class="write-col col-md-6">
+                                                        <label for="trade_name" class="write-label">상호명</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="trade_name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="trade_en" class="write-label">상호(영문)</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="trade_en" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="conditions" class="write-label">업태</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="conditions" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="event" class="write-label">종목</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="event">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="busi_num" class="write-label">사업자번호</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="busi_num">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="order_sales_num"
+                                                            class="write-label">통신판매신고번호</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text"
+                                                                id="order_sales_num">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="representative" class="write-label">대표자명</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="representative">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="policy_manager" class="write-label">개인정보보호
+                                                            담당자명</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="policy_manager">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="company_tel" class="write-label">대표전화</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="company_tel">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="company_fax" class="write-label">팩스번호</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="company_fax">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="company_email" class="write-label">이메일</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text" id="company_email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="consultation_time" class="write-label">상담시간</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="text"
+                                                                id="consultation_time">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="logo" class="write-label">대표로고</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="file" id="logo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="footer_logo" class="write-label">하단로고</label>
+                                                        <div class="input-wrap">
+                                                            <input class="form-control" type="file" id="footer_logo">
+                                                        </div>
+                                                    </div>
+                                                    <div class="write-col col-md-6">
+                                                        <label for="bank" class="write-label">은행관리</label>
+                                                        <div class="input-wrap">
+                                                            <div class="row g-2">
+                                                                <span class="col-3">
+                                                                    <input class="form-control" type="text"
+                                                                        placeholder="은행명" id="bank_name">
+                                                                </span>
+                                                                <span class="col-3">
+                                                                    <input class="form-control" type="text"
+                                                                        placeholder="예금주" id="bank_holder">
+                                                                </span>
+                                                                <span class="col-6">
+                                                                    <input class="form-control" type="text"
+                                                                        placeholder="계좌번호" id="bank_num">
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <!-- End 회사정보rmation Content-->
+
+                                        </div> <!-- end tab content-->
+
+                                    </div> <!-- end 회사정보-->
+                                </div> <!-- end tab-content-->
+                            </div> <!-- card-body -->
+                        </div><!-- end card -->
+
+                    </div> <!-- body -->
+
+                </div> <!-- row -->
+            </div> <!-- container-fluid -->
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+</body>
+
+</html>

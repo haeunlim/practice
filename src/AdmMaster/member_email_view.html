@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "이메일 관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="write-col-wrap">
+                                    <div class="write-col col-12">
+                                        <label for="receiveTo" class="write-label">메일항목</label>
+                                        <div class="input-wrap">
+                                            <span class="d-inline-block">문의답변</span>
+                                            <span class="d-inline-block text-muted"><small>(기본설정 변경시 수정 하셔야 됩니다.)</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="auto_send" class="write-label">구분</label>
+                                        <div class="input-wrap">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="autoSend_ok" name="auto_send"
+                                                    class="form-check-input" checked>
+                                                <label class="form-check-label" for="autoSend_ok">자동발송</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="autoSend_none" name="auto_send"
+                                                    class="form-check-input">
+                                                <label class="form-check-label" for="autoSend_none">자동발송안함</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="sender" class="write-label">발송자이름</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="sender" class="form-control" value="BIODIV">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="senderEmail" class="write-label">발송자 E-mail</label>
+                                        <div class="input-wrap">
+                                            <input type="email" id="senderEmail" class="form-control"
+                                                value="biodiv@biodiv.com">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="subject" class="write-label">메일제목</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="subject" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="desc" class="write-label">내용</label>
+                                        <div class="input-wrap">
+                                            <textarea id="simplemde1"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap mx-auto mx-sm-0 ms-sm-auto mt-1">
+                                        <a class="btn btn-light" href="member_email.html"><i class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></a>
+                                        <button type="button" class="btn btn-primary" onclick="location.href='board_notice_write.html'"><i class="mdi mdi-account-edit"></i> 수정<span class="d-md-inline-block d-none">하기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+@@include('./partials/board-write-footer.html')
+
+<script>
+    $('#basic-datatable_paginate').prepend(
+        '<button class="btn btn-primary"><i class="mdi mdi-circle-plus"><i> 선택한 회원 추가</button>')
+    $("#send-btn").on('click', function (e) {
+        $.NotificationApp.send("", "You successfully read this important alert message",
+            'bottom-right', 'rgba(0,0,0,0.2)', 'success');
+    });
+</script>
+
+</body>
+
+</html>

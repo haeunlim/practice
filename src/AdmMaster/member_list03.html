@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "운영회원"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "운영회원"})
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-success chk_all_btn"><i
+                                        class="mdi mdi-check"></i>
+                                    전체<span class="d-md-inline-block d-none">선택</span></button>
+                                <button type="button" class="btn btn-secondary all_release_btn"><i
+                                        class="mdi mdi-close"></i> <span class="d-md-inline-block d-none">
+                                        선택</span>해제</button>
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#primary-header-modal"><i class="mdi mdi-delete"></i> <span
+                                            class="d-md-inline-block d-none">선택</span>삭제</button>
+                                </div>
+                                <div class="search-form-wrap m-wd-1000">
+                                    <form class="row gy-2 gx-1 gy-md-3 gx-md-2">
+                                        <div class="col-md-4 d-flex flex-wrap align-items-center">
+                                            <label for="status-select"
+                                                class="flex-shrink-0 search-labels">기간검색</label>
+                                            <div class="search-input-box">
+                                                <div id="reportrange" class="form-control" data-toggle="date-picker-range"
+                                                    data-target-display="#selectedValue" data-cancel-class="btn-light">
+                                                    <i class="mdi mdi-calendar"></i>&nbsp;<span id="selectedValue"></span>
+                                                    <i class="mdi mdi-menu-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                            <label for="search-title"
+                                                class="flex-shrink-0 search-labels">검색어</label>
+                                            <div class="search-input-box d-flex">
+                                                <div class="col-4 pe-1">
+                                                    <select class="form-select" id="search-select">
+                                                        <option selected>구분</option>
+                                                        <option>제목</option>
+                                                        <option>작성자</option>
+                                                        <option>연락처</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-8"><input type="search" class="form-control"
+                                                        id="search-title" placeholder="검색어를 입력하세요"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto mx-auto justfy-items-center">
+                                            <button type="button" class="btn btn-primary my-0"><i class="mdi mdi-magnify search-icon"></i> 검색<span class="d-md-inline-block d-none">하기</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100"
+                                        id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" class="form-check-input" id="checkall"  name="data_chk">
+                                                </th>
+                                                <th>번호</th>
+                                                <th>상태</th>
+                                                <th>아이디</th>
+                                                <th>사원명</th>
+                                                <th>직급</th>
+                                                <th>연락처</th>
+                                                <th>이메일</th>
+                                                <th>등록일</th>
+                                                <th>관리</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i>이용중</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>무덕이</span>
+                                                </td>
+                                                <td>
+                                                    <span>팀장</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-2295-1902</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>2022-06-16 16:15</td>
+                                                <td>
+                                                    <a href="member_list03_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i>이용중</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>무덕이</span>
+                                                </td>
+                                                <td>
+                                                    <span>사원</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-2295-1902</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>2022-06-16 16:15</td>
+                                                <td>
+                                                    <a href="member_list03_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-warning"></i>중지</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>무덕이</span>
+                                                </td>
+                                                <td>
+                                                    <span>대리</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-2295-1902</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>2022-06-16 16:15</td>
+                                                <td>
+                                                    <a href="member_list03_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i>이용중</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>무덕이</span>
+                                                </td>
+                                                <td>
+                                                    <span>사원</span>
+                                                </td>
+                                                <td>
+                                                    <span>010-2295-1902</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>2022-06-16 16:15</td>
+                                                <td>
+                                                    <a href="member_list03_write.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon"
+                                                        data-bs-toggle="modal" data-bs-target="#primary-header-modal">
+                                                        <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

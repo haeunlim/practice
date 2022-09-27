@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "자료실"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page view-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-light" onclick="location.href='board_data_list.html'"><i class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='board_data_write.html'"><i class="mdi mdi-account-edit"></i> 수정<span class="d-md-inline-block d-none">하기</span></button>
+                                </div>
+                            <form class="view-col-wrap row">
+                                <div class="view-col col-12">
+                                    <p class="view-label">작성자</p>
+                                    <div class="view-text">
+                                        <span>관리자</span>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">공지</p>
+                                    <div class="view-text">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="noti_chk" checked disabled>
+                                            <label class="form-check-label" for="noti_chk">공지</label>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">등록일</p>
+                                    <div class="view-text">
+                                        <span>2022-09-06 06:15:11</span>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">제목</p>
+                                    <div class="view-text">
+                                        <span>제목이 들어갑니다</span>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">조회</p>
+                                    <div class="view-text">
+                                       <span>10</span>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">푸쉬여부</p>
+                                    <div class="view-text">
+                                        <div class="form-check">
+                                            <input class="form-check-input" id="push_chk" disabled>
+                                            <label class="form-check-label" for="push_chk">푸쉬발송</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12 align-items-start">
+                                    <p class="view-label">내용</p>
+                                    <div class="col-10  col-form-label">
+                                       <span>비오디브 공지사항입니다 필독해주세요 비오디브 공지사항입니다 필독해주세요비오디브 공지사항입니다 필독해주세요비오디브 공지사항입니다 필독해주세요비오디브 공지사항입니다 필독해주세요비오디브 공지사항입니다 필독해주세요비오디브 공지사항입니다 필독해주세요</span>
+                                    </div>
+                                </div>
+                                <div class="view-col col-12">
+                                    <p class="view-label">첨부파일</p>
+                                    <div class="view-text">
+                                       <a href="#!" download="">첨부 파일이 들어갑니다</a>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-body-->
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+            </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+
+</body>
+
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "운영회원"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member_list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "운영회원"})
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="justify-content-end row">
+                                        <div class="btn-wrap col-auto">
+                                            <button type="button" class="btn btn-light"
+                                                onclick="location.href='member_list03.html'"><i
+                                                    class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></button>
+                                            <button type="submit" class="btn btn-primary"><i
+                                                    class="mdi mdi-account-edit"></i> 수정<span class="d-md-inline-block d-none">하기</span></button>
+                                        </div>
+                                    </div>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_id" class="write-label">아이디</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="member_id" class="form-control" readonly=""
+                                                value="lifeess">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_pw" class="write-label">비밀번호</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group">
+                                                <input type="text" id="member_pw" class="form-control">
+                                                <button class="btn btn-outline-primary" type="button">수정</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_name" class="write-label">이름</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="member_name" class="form-control" readonly=""
+                                                value="유아인">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_email1" class="write-label">전화번호</label>
+                                        <div class="input-wrap">
+                                            <input type="text" class="form-control" data-toggle="input-mask"
+                                                value="010-3333-5555" data-mask-format="000-0000-0000">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_pw" class="write-label">이메일 수신 여부</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id="email_y" name="email_receive"
+                                                        class="form-check-input" checked disabled>
+                                                    <label class="form-check-label" for="email_y">수신</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id="email_n" name="email_receive"
+                                                        class="form-check-input" disabled>
+                                                    <label class="form-check-label" for="email_n">수신안함</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-6">
+                                        <label for="member_email1" class="write-label">이메일</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="member_email1"
+                                                    value="lifeess">
+                                                <div class="input-group-text">@</div>
+                                                <input type="text" class="form-control" id="member_email2"
+                                                    value="naver.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="member_email1" class="write-label">이메일</label>
+                                        <div class="card border-primary border input-wrap">
+
+                                            <ul class="card-body list-unstyled">
+                                                <li>
+                                                    <div class="btn-wrap mb-3">
+                                                        <button type="button"
+                                                            class="btn btn-sm btn-success">전체선택</button>
+                                                        <button type="button"
+                                                            class="btn btn-sm btn-secondary">선택해제</button>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="board_mn" class="write-label">게시판관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="board_chk01" name="board_mn"
+                                                                class="form-check-input" checked>
+                                                            <label class="form-check-label"
+                                                                for="board_chk01">공지사항</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="board_chk02" name="board_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="board_chk02">FAQ(자주묻는질문)</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="board_chk03" name="board_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="board_chk03">1:1문의</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="board_chk04" name="board_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="board_chk04">자료실</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="board_chk05" name="board_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="board_chk05">알림관리(푸쉬)</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="member_mn" class="write-label">회원관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk01" name="member_mn"
+                                                                class="form-check-input" checked>
+                                                            <label class="form-check-label" for="member_chk01">조사원
+                                                                회원관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk02" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="member_chk02">일반
+                                                                회원관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk03" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="member_chk03">운영자
+                                                                회원관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk04" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="member_chk04">휴면회원</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk05" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="member_chk05">회원탈퇴</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk06" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="member_chk06">이메일 발송
+                                                                관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="member_chk07" name="member_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="member_chk07">SMS
+                                                                발송관리</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="code_mn" class="write-label">코드관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="code_chk01" name="code_mn"
+                                                                class="form-check-input" checked>
+                                                            <label class="form-check-label" for="code_chk01">지역
+                                                                카테고리</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="code_chk02" name="code_mn"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="code_chk02">사업
+                                                                카테고리</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="business_mn" class="write-label">사업관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="business_chk01"
+                                                                name="business_mn" class="form-check-input" checked>
+                                                            <label class="form-check-label"
+                                                                for="business_chk01">사업등록</label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="business_chk02"
+                                                                name="business_mn" class="form-check-input">
+                                                            <label class="form-check-label" for="business_chk02">사업
+                                                                진행중</label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="business_chk03"
+                                                                name="business_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="business_chk03">사업대기</label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="business_chk04"
+                                                                name="business_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="business_chk04">사업완료</label>
+                                                        </div>
+
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="business_chk05"
+                                                                name="business_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="business_chk05">사업취소</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="operation_mn" class="write-label">운영관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="operation_chk01"
+                                                                name="operation_mn" class="form-check-input" checked>
+                                                            <label class="form-check-label"
+                                                                for="operation_chk01">메인배너</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="operation_chk02"
+                                                                name="operation_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="operation_chk02">팝업관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="operation_chk03"
+                                                                name="operation_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="operation_chk03">정보관리</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="operation_chk04"
+                                                                name="operation_mn" class="form-check-input">
+                                                            <label class="form-check-label" for="operation_chk04">약관 및
+                                                                정책</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="operation_chk05"
+                                                                name="operation_mn" class="form-check-input">
+                                                            <label class="form-check-label" for="operation_chk05">관리자 접속
+                                                                IP</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li class="write-col">
+                                                    <label for="statistics_mn" class="write-label">통계관리</label>
+                                                    <div class="input-wrap">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="statistics_chk01"
+                                                                name="statistics_mn" class="form-check-input" checked>
+                                                            <label class="form-check-label"
+                                                                for="statistics_chk01">회원분석</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="checkbox" id="statistics_chk02"
+                                                                name="statistics_mn" class="form-check-input">
+                                                            <label class="form-check-label"
+                                                                for="statistics_chk02">사업분석</label>
+                                                        </div>
+                                                    </div>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+</body>
+
+</html>

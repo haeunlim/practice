@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "통합 사업관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "통합 사업관리"})
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="btn-wrap text-end">
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#primary-header-modal"><i class="mdi mdi-delete"></i>
+                                            <span class="d-md-inline-block d-none">선택</span>삭제</button>
+                                        <button type="button" class="btn btn-success"><i class="mdi mdi-arrow-up-down"></i>
+                                            <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                        <a href="business01_add.html" class="btn btn-primary"><i class="mdi mdi-plus-circle"></i>
+                                            <span class="d-md-inline-block d-none">사업</span>등록</a>
+                                       
+                                    </div>
+                                        <div class="search-form-wrap">
+                                            <form class="row gy-2 gx-1 gy-md-3 gx-md-2">
+                                                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                                    <label for="reportrange"
+                                                        class="flex-shrink-0 search-labels">기간검색</label>
+                                                    <div class="search-input-box">
+                                                        <div id="reportrange" class="form-control"
+                                                            data-toggle="date-picker-range" data-target-display="#selectedValue"
+                                                            data-cancel-class="btn-light">
+                                                            <i class="mdi mdi-calendar"></i>&nbsp;<span
+                                                                id="selectedValue"></span> <i class="mdi mdi-menu-down"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                                    <label for="area-select"
+                                                        class="flex-shrink-0 search-labels">지역검색</label>
+                                                    <div class="search-input-box row gy-0 gx-1">
+                                                        <div class="col-6">
+                                                            <select class="form-select" id="area-select">
+                                                                <option selected>국가선택</option>
+                                                                <option>국가선택</option>
+                                                                <option>국가선택</option>
+                                                                <option>국가선택</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <select class="form-select" id="area-select2">
+                                                                <option selected>지역선택</option>
+                                                                <option>지역선택</option>
+                                                                <option>지역선택</option>
+                                                                <option>지역선택</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                                    <label for="busi_name"
+                                                        class="flex-shrink-0 search-labels">사업명</label>
+                                                    <div class="search-input-box">
+                                                        <input type="search" class="form-control" id="busi_name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                                    <label for="business_state"
+                                                        class="flex-shrink-0 search-labels">상태</label>
+                                                    <div class="search-input-box">
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="business_all" name="business_state"
+                                                                class="form-check-input" checked>
+                                                            <label class="form-check-label" for="business_all">전체</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="business_com" name="business_state"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="business_com">완료</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="business_ing" name="business_state"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="business_ing">진행중</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="business_stop" name="business_state"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="business_stop">보류</label>
+                                                        </div>
+                                                        <div class="form-check form-check-inline">
+                                                            <input type="radio" id="business_can" name="business_state"
+                                                                class="form-check-input">
+                                                            <label class="form-check-label" for="business_can">취소</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 text-center">
+                                                    <button type="button" class="btn btn-primary my-0"><i class="mdi mdi-magnify search-icon"></i> 검색<span class="d-md-inline-block d-none">하기</span></button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-ellipsis="4" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" class="form-check-input" id="checkall"  name="data_chk">
+                                                </th>
+                                                <th width="4%">번호</th>
+                                                <th width="4%">미리보기</th>
+                                                <th width="4%">우선순위</th>
+                                                <th width="auto">제목</th>
+                                                <th width="4%">뎁스</th>
+                                                <th width="4%">설문갯수</th>
+                                                <th width="4%">현황</th>
+                                                <th width="8%">레포트</th>
+                                                <th width="13%">오픈/예약 일시</th>
+                                                <th width="15%">최초 등록일</th>
+                                                <th width="6%">관리</th>
+                                                <th width="6%">설문진행</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm">보기</button>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="10">
+                                                </td>
+                                                <td>
+                                                    <span>라오스 농업 4차 실태조사</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>125</span>
+                                                </td>
+                                                <td>
+                                                    <span>완료</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_report.html">보기/PDF</a>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14<br> 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_view.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm" onclick="location.href='business01_survey.html'"><i class="mdi mdi-order-bool-descending-variant"></i> 관리</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm">보기</button>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="10">
+                                                </td>
+                                                <td>
+                                                    <span>라오스 농업 4차 실태조사</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>125</span>
+                                                </td>
+                                                <td>
+                                                    <span>진행중</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_report.html">보기/PDF</a>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14<br> 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_view.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm" onclick="location.href='business01_survey.html'"><i class="mdi mdi-order-bool-descending-variant"></i> 관리</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm">보기</button>
+                                                </td>
+                                                <td>
+                                                    <input type="text" class="form-control" value="10">
+                                                </td>
+                                                <td>
+                                                    <span>라오스 농업 4차 실태조사</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>125</span>
+                                                </td>
+                                                <td>
+                                                    <span>완료</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_report.html">보기/PDF</a>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14<br> 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+                                                <td>
+                                                    <a href="business01_view.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                            <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-primary btn-sm" onclick="location.href='business01_survey.html'"><i class="mdi mdi-order-bool-descending-variant"></i> 관리</button>
+                                                </td>
+                                            </tr>
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

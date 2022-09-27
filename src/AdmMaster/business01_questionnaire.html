@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "설문 문항 등록"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html'l", {"title": "설문 문항 등록"})
+                <!-- end page title -->
+
+
+                <div class="row">
+                    <div class="btn-wrap text-end mb-3">
+                        <a href="business01.html" class="btn btn-light">
+                            <i class="mdi mdi-format-list-bulleted"></i>
+                            <span>목록<span class="d-md-inline-block d-none">으로</span></span>
+                        </a>
+                        <button type="submit" class="btn btn-warning">
+                            <i class="mdi mdi-delete"></i>
+                            <span><span class="d-md-inline-block d-none">임시</span>저장</span>
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="mdi mdi-plus-circle"></i>
+                            <span>등록<span class="d-md-inline-block d-none">하기</span></span>
+                        </button>
+
+                    </div>
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>1번 설문 문항 등록</h4>
+                                <form class="write-col-wrap row question_write">
+                                    <div class="write-col col-12">
+                                        <label for="start_date" class="write-label">설문유형 선택</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group align-items-center">
+                                                <div class="form-check-inline">
+                                                    <select class="form-select" id="question_select">
+                                                        <option value="0" selected>설문유형선택</option>
+                                                        <option value="1">단답형</a></option>
+                                                        <option value="2">장문형</option>
+                                                        <option value="3">객관식</option>
+                                                        <option value="4">어의차형</option>
+                                                        <option value="5">서열식</option>
+                                                        <option value="6">체크리스트</option>
+                                                        <option value="7">매트릭스</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-check-inline">
+                                                    <input type="checkbox" id="reservation_chk" name="reservation_chk"
+                                                        class="form-check-input">
+                                                    <label class="form-check-label" for="reservation_chk">필수응답</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="chk_show_box">
+                                        <div class="write-col col-12">
+                                            <label for="state" class="write-label">상태</label>
+                                            <div class="input-wrap">
+                                                <div class="input-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="state_use" name="state"
+                                                            class="form-check-input" checked>
+                                                        <label class="form-check-label" for="state_use">사용</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="state_ing" name="state"
+                                                            class="form-check-input">
+                                                        <label class="form-check-label" for="state_ing">작성중</label>
+                                                    </div>
+
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="state_can" name="email_receive"
+                                                            class="form-check-input">
+                                                        <label class="form-check-label" for="state_can">사용안함</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="condi" class="write-label">조건</label>
+                                            <div class="input-wrap">
+                                                <div class="input-group">
+                                                    <div class="form-check form-check-inline chk_box_01">
+                                                        <input type="checkbox" id="condi_basic" name="condi"
+                                                            class="form-check-input" checked>
+                                                        <label class="form-check-label" for="condi_basic">일반</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline chk_box_02">
+                                                        <input type="checkbox" id="condi_relevant" name="condi"
+                                                            class="form-check-input">
+                                                        <label class="form-check-label" for="condi_relevant">관련</label>
+                                                    </div>
+
+                                                    <div class="form-check form-check-inline chk_box_03">
+                                                        <input type="checkbox" id="condi_add" name="email_receive"
+                                                            class="form-check-input">
+                                                        <label class="form-check-label" for="condi_add">추가</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12" id="matrix" style="display:none">
+                                            <label for="matrix_chk" class="write-label">매트릭스 형식</label>
+                                            <div class="input-wrap">
+                                                <div class="input-group">
+                                                    <div class="form-check form-check-inline chk_box_01">
+                                                        <input type="checkbox" id="matrix_chk_multiple"
+                                                            name="matrix_chk" class="form-check-input" checked>
+                                                        <label class="form-check-label"
+                                                            for="matrix_chk_multiple">객관식</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline chk_box_02">
+                                                        <input type="checkbox" id="matrix_chk_subjective"
+                                                            name="matrix_chk" class="form-check-input">
+                                                        <label class="form-check-label"
+                                                            for="matrix_chk_subjective">주관식</label>
+                                                    </div>
+
+                                                    <div class="form-check form-check-inline chk_box_03">
+                                                        <input type="checkbox" id="matrix_chk_overlap"
+                                                            name="email_receive" class="form-check-input">
+                                                        <label class="form-check-label"
+                                                            for="matrix_chk_overlap">중복선택</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 justify-content-center">
+                                        <button type="button" class="btn btn-primary" onclick="boxMade()">생성하기</button>
+                                    </div>
+                                </form>
+
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+
+                    </div> <!-- end col -->
+
+                    <div class="col-12 box_made_place">
+                        <!-- 단답형 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <h4>설문 작성1</h4>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12">
+                                        <label for="short_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="short_question"
+                                                        value="이름을 입력해주세요.">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="short_add_direct">
+                                                        <label class="form-check-label" for="short_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="submit" class="btn btn-primary">질문등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="short_characters" class="write-label">글자수</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="short_characters"
+                                                        value="10">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>자 이내</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="short_figure_select" class="write-label">수치</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group">
+                                                <div class="form-check-inline">
+                                                    <select class="form-select direct_select" id="short_figure_select">
+                                                        <option selected>없음</option>
+                                                        <option>개</option>
+                                                        <option>KG</option>
+                                                        <option>CM</option>
+                                                        <option>L</option>
+                                                        <option value="direct">기타</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-check-inline direct_input" style="display:none">
+                                                    <input type="text" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 단답형  끝 -->
+                        <!-- 장문형 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="col-auto">설문 작성-장문형</h4>
+                                    <div class="btn-wrap text-end col-auto">
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-help-circle"></i>
+                                            보기</button>
+                                    </div>
+                                </div>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="long_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2">
+                                                <div class="col-md-6" >
+                                                    <textarea class="form-control" data-toggle="maxlength"
+                                                        maxlength="200" rows="3"
+                                                        placeholder="200자내 농장 소개를 해주세요."></textarea>
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="long_move_num"
+                                                        placeholder="3">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <p class="py-1">번으로 이동</p>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check py-1">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="long_add_direct">
+                                                        <label class="form-check-label" for="long_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="long_characters" class="write-label">글자수</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="long_characters"
+                                                        placeholder="200">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>자 이내</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 장문형 끝 -->
+                        <!-- 객관식 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="col-auto">설문 작성-객관식</h4>
+                                    <div class="btn-wrap text-end col-auto">
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-help-circle"></i>
+                                            보기</button>
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-plus-circle"></i>
+                                            문항추가</button>
+                                    </div>
+                                </div>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12">
+                                        <label for="multiple_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-12">
+                                                    <input type="text" class="form-control" value="귀하가 농업에 종은?">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_01" class="write-label">1</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="0~1년">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num01"
+                                                        value="4">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_01_add_direct">
+                                                        <label class="form-check-label" for="multiple_01_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_02" class="write-label">2</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="2~10년">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num02"
+                                                        placeholder="5">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_02_add_direct">
+                                                        <label class="form-check-label" for="multiple_02_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_03" class="write-label">3</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="11~20년">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num03"
+                                                        placeholder="4">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_03_add_direct">
+                                                        <label class="form-check-label" for="multiple_03_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_04" class="write-label">4</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="21~30년">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num04"
+                                                        placeholder="4">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_04_add_direct">
+                                                        <label class="form-check-label" for="multiple_04_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_05" class="write-label">5</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="30년 이상">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num05"
+                                                        placeholder="4">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_05_add_direct">
+                                                        <label class="form-check-label" for="multiple_05_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="multiple_06" class="write-label">6 입력 <div
+                                                class="form-check-inline">
+                                                <input type="checkbox" class="form-check-input" id="multiple_last_chk">
+                                            </div></label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" placeholder="기타">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" id="multiple_move_num06"
+                                                        placeholder="10">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="multiple_06_add_direct">
+                                                        <label class="form-check-label" for="multiple_06_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 객관식 끝 -->
+                        <!-- 어의차형 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="col-auto">설문 작성-어의차형</h4>
+                                    <div class="btn-wrap text-end col-auto">
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-help-circle"></i>
+                                            보기</button>
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-plus-circle"></i>
+                                            문항추가</button>
+                                    </div>
+                                </div>
+                                <form class="write-col-wrap row">
+
+                                    <div class="write-col-inner col-12">
+
+                                        <div class="write-col col-12">
+                                            <label for="tnmotsm_question" class="write-label">질문</label>
+                                            <div class="input-wrap">
+                                                <input type="text" class="form-control" id="tnmotsm_question"
+                                                    placeholder="라오스 농업 산업에 대해 어떻게 생각하십니까?">
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="tnmotsm_num_01" class="write-label">1</label>
+                                            <div class="input-wrap">
+                                                <div class="row gy-2 gx-2 align-items-center">
+                                                    <div class="col-2">
+                                                        <span>기준</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="선진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="후진국">
+                                                    </div>
+                                                </div>
+                                                <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                    <div class="col-2">
+                                                        <span>좌측단계</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="약간 선진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="중간 선진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="선진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                    <div class="col-2">
+                                                        <span>좌측단계</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="약간 후진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="중간 후진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="후진국">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 어의 차형 추가 하면 아래 나옴 -->
+                                    <div class="write-col-inner col-12 mt-4">
+
+                                        <div class="write-col col-12">
+                                            <label for="tnmotsm_question2" class="write-label">질문</label>
+                                            <div class="input-wrap">
+                                                <input type="text" class="form-control" id="tnmotsm_question2"
+                                                    placeholder="라오스 농업 산업에 대해 어떻게 생각하십니까?">
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="tnmotsm_num_02" class="write-label">2</label>
+                                            <div class="input-wrap">
+                                                <div class="row gy-2 gx-2 align-items-center">
+                                                    <div class="col-2">
+                                                        <span>기준</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="비전 있음
+                                                            ">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="비전 없음
+                                                            ">
+                                                    </div>
+                                                </div>
+                                                <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                    <div class="col-2">
+                                                        <span>좌측단계</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="1">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="2">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="3">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                                <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                    <div class="col-2">
+                                                        <span>좌측단계</span>
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="-1">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="-2">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control" placeholder="-3">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                    <div class="col-2">
+                                                        <input type="text" class="form-control">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 어의차형 끝-->
+                        <!-- 서열식 시작-->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <h4>설문 작성-서열식 보기 안나옴</h4>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12">
+                                        <label for="order_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" id="order_question"
+                                                        placeholder="이름을 입력해주세요.">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="order_add_direct">
+                                                        <label class="form-check-label" for="order_add_direct">추가
+                                                            직접입력</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="submit" class="btn btn-primary">질문등록</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="order_characters" class="write-label">글자수</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" id="order_characters"
+                                                        placeholder="10">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <span>자 이내</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="order_figure_select" class="write-label">수치</label>
+                                        <div class="input-wrap">
+                                            <div class="input-group">
+                                                <div class="form-check-inline">
+                                                    <select class="form-select direct_select" id="order_figure_select">
+                                                        <option selected>없음</option>
+                                                        <option>개</option>
+                                                        <option>KG</option>
+                                                        <option>CM</option>
+                                                        <option>L</option>
+                                                        <option value="direct">기타</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-check-inline direct_input" style="display:none">
+                                                    <input type="text" class="form-control" id="order_figure_etc">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 서열식 끝 -->
+                        <!-- 체크리스트 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="col-auto">설문 작성-체크리스트</h4>
+                                    <div class="btn-wrap text-end col-auto">
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-help-circle"></i>
+                                            보기</button>
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-plus-circle"></i>
+                                            문항추가</button>
+                                    </div>
+                                </div>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <input type="text" class="form-control" id="chk_list_question"
+                                                value="농장에서 키우는 작물은 무엇입니까 해당 항목에 □에  체크를 해주십시요.">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num01" class="write-label">1</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="사과">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num02" class="write-label">2</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="망고">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num03" class="write-label">3</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="바나나">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num04" class="write-label">4</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="포도">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num05" class="write-label">5</label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="메론">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="chk_list_num06" class="write-label">6 입력 <div
+                                                class="form-check-inline">
+                                                <input type="checkbox" class="form-check-input" id="chk_list_last_chk">
+                                            </div></label>
+                                        <div class="input-wrap">
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <input type="text" class="form-control" value="기타">
+                                                </div>
+                                                <div class="col-2">
+                                                    <input type="text" class="form-control" value="8">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div>번으로 이동</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- 체크리스트 끝 -->
+                        <!-- 매트릭스 시작 -->
+                        <div class="card" style="display:none">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h4 class="col-auto">설문 작성-매트릭스</h4>
+                                    <div class="btn-wrap text-end col-auto">
+                                        <button class="btn btn-outline-primary"><i class="mdi mdi-help-circle"></i>
+                                            보기</button>
+                                    </div>
+                                </div>
+                                <form class="write-col-wrap row">
+                                    <div class="write-col col-12">
+                                        <label for="martrix_question" class="write-label">질문</label>
+                                        <div class="input-wrap">
+                                            <input type="text" class="form-control" id="martrix_question"
+                                                value="위 질문에 따른 지난 작기 생산한 작목별 판매량과 판매가격은?">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="martrix_row" class="write-label">행 입력
+                                        </label>
+                                        <div class="input-wrap position-relative">
+                                            <div class="position-absolute top-0 end-0"><button type="button"
+                                                    class="btn btn-outline-primary">문항추가</button></div>
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-2">
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="작목명">
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                <div class="col-2">
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="판매량(T 또는 Kg)
+                                                    ">
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                <div class="col-2">
+                                                    <span>3</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="판매단가
+                                                    ">
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                <div class="col-2">
+                                                    <span>4</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="총 판매액
+                                                    ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start mt-2">
+                                        <label for="martrix_col" class="write-label">열 입력
+                                        </label>
+                                        <div class="input-wrap position-relative">
+                                            <div class="position-absolute top-0 end-0"><button type="button"
+                                                    class="btn btn-outline-primary">문항추가</button></div>
+                                            <div class="row gy-2 gx-2 align-items-center">
+                                                <div class="col-2">
+                                                    <span>1</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="가축명">
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                <div class="col-2">
+                                                    <span>2</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="판매단가">
+                                                </div>
+                                            </div>
+                                            <div class="row gy-2 gx-2 align-items-center mt-0">
+                                                <div class="col-2">
+                                                    <span>3</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <input type="text" class="form-control" value="총 판매액">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+<script>
+    "use strict";
+
+    $('.question_write #question_select').change(function () {
+        if ($(this).val() === '4') {
+            $('.form-check.chk_box_02').css('display', 'none');
+            $('.form-check.chk_box_03').css('display', 'none');
+        } else if ($(this).val() === '6') {
+            $('.form-check.chk_box_03').css('display', 'none');
+
+        } else if ($(this).val() === '7') {
+            $('.form-check.chk_box_02').css('display', 'none');
+            $('.form-check.chk_box_03').css('display', 'none');
+            $('#matrix').css('display', 'flex');
+
+        } else {
+
+            $('.form-check.chk_box_02').css('display', 'block');
+            $('.form-check.chk_box_03').css('display', 'block');
+            $('#matrix').css('display', 'none');
+        }
+        if ($(this).val() === '0') {
+
+            $('#chk_show_box').css('display', 'none');
+        } else {
+
+            $('#chk_show_box').css('display', 'block');
+        }
+
+    });
+
+    function boxMade() {
+        var selectValue = $('.question_write #question_select').val();
+        var $boxMadePlaceCard = $('.box_made_place > .card');
+        if (selectValue === '0') {
+            $boxMadePlaceCard.css('display', 'none');
+
+        } else {
+
+            $boxMadePlaceCard.css('display', 'none');
+            $boxMadePlaceCard.eq(selectValue - 1).css('display', 'block');
+        }
+    };
+    $('select.direct_select').change(function () {
+        if ($(this).val() === 'direct') {
+            $(this).parent().next().show()
+        } else {
+            $(this).parent().next().hide()
+
+        }
+    });
+</script>
+</body>
+
+</html>

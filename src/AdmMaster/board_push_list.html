@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "푸쉬관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page push-content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row justify-content-between">
+                                    <div class="col-auto">
+                                        <a href="board_push_write.html" class="btn btn-primary write_btn"><i
+                                                class="mdi mdi-plus-circle"></i> 등록<span class="d-md-inline-block d-none">하기</span></a>
+                                    </div>
+                                    <div class="col-auto">
+                                        <div class="btn-wrap text-sm-end">
+                                            <button type="button" class="btn btn-success chk_all_btn"><i
+                                                class="mdi mdi-check"></i>
+                                            전체<span class="d-md-inline-block d-none">선택</span></button>
+                                        <button type="button" class="btn btn-secondary all_release_btn"><i
+                                                class="mdi mdi-close"></i> <span class="d-md-inline-block d-none">
+                                                선택</span>해제</button>
+                                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#primary-header-modal"><i
+                                                    class="mdi mdi-delete"></i> <span
+                                                    class="d-md-inline-block d-none">선택</span>삭제</button>
+                                        </div>
+                                    </div><!-- end col-->
+                                </div><!-- end btn_box-->
+                                <!-- nav -->
+                                <ul class="nav nav-tabs nav-bordered my-3">
+                                    <li class="nav-item">
+                                        <a href="#auto_push" data-bs-toggle="tab" aria-expanded="false"
+                                            class="nav-link active">
+                                            자동발송
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a href="#direct_push" data-bs-toggle="tab" aria-expanded="true"
+                                            class="nav-link">
+                                           직접발송
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- tab-content -->
+                                <div class="tab-content">
+                                    <!-- 자동발송-->
+                                    <div class="tab-pane show active" id="auto_push">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="text-center text-md-start">자동발송</h4>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped w-100 push-table" id="push-table1">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <input type="checkbox" class="form-check-input" id="checkall"  name="data_chk">
+                                                                </th>
+                                                                <th>코드</th>
+                                                                <th>타이틀</th>
+                                                                <th class="push-desc">푸쉬내용</th>
+                                                                <th>자동<br class="d-md-none d-block">발송여부</th>
+                                                                <th>관리</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    ST03
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 제목이 들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬
+                                                                    알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림
+                                                                    내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다푸쉬 알림 내용이
+                                                                    들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    Y
+                                                                </td>
+                                                                <td>
+                                                                    <a href="board_push_write.html" class="action-icon">
+                                                                        <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                    <a href="javascript:void(0);" class="action-icon"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#primary-header-modal">
+                                                                        <i class="mdi mdi-delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    ST04
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 제목이 들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬
+                                                                    알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림
+                                                                    내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다푸쉬 알림 내용이
+                                                                    들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    Y
+                                                                </td>
+                                                                <td>
+                                                                    <a href="board_push_write.html" class="action-icon">
+                                                                        <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                    <a href="javascript:void(0);" class="action-icon"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#primary-header-modal">
+                                                                        <i class="mdi mdi-delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div> <!-- end row-->
+                                    </div>
+                                    <!-- End 자동발송-->
+
+                                    <!-- 직접발송-->
+                                    <div class="tab-pane" id="direct_push">
+                                        <div class="row">
+                                            <div class="col">
+                                                <h4 class="text-center text-md-start">직접발송</h4>
+                                                <div class="table-responsive">
+                                                    <table class="table table-striped w-100 push-table" id="push-table2">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <input type="checkbox" class="form-check-input" id="checkall"  name="data_chk">
+                                                                </th>
+                                                                <th>코드</th>
+                                                                <th>타이틀</th>
+                                                                <th class="push-desc">푸쉬내용</th>
+                                                                <th>관리</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    ST03
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 제목이 들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬
+                                                                    알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림
+                                                                    내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다푸쉬 알림 내용이
+                                                                    들어갑니다
+                                                                </td>
+                                                              
+                                                                <td>
+                                                                    <a href="board_push_write.html" class="action-icon">
+                                                                        <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                    <a href="javascript:void(0);" class="action-icon"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#primary-header-modal">
+                                                                        <i class="mdi mdi-delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td></td>
+                                                                <td>
+                                                                    ST04
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 제목이 들어갑니다
+                                                                </td>
+                                                                <td>
+                                                                    푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬
+                                                                    알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림
+                                                                    내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다 푸쉬 알림 내용이 들어갑니다푸쉬 알림 내용이
+                                                                    들어갑니다
+                                                                </td>
+                                                              
+                                                                <td>
+                                                                    <a href="board_push_write.html" class="action-icon">
+                                                                        <i class="mdi mdi-square-edit-outline"></i></a>
+                                                                    <a href="javascript:void(0);" class="action-icon"
+                                                                        data-bs-toggle="modal"
+                                                                        data-bs-target="#primary-header-modal">
+                                                                        <i class="mdi mdi-delete"></i></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <!-- End 회사정보rmation Content-->
+
+                                        </div> <!-- end tab content-->
+
+                                    </div> <!-- end 회사정보-->
+                                </div> <!-- end tab-content-->
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "알림사항"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page write-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+            
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-light" onclick="location.href='board_notice_list.html'"><i class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></button>
+                                    <button type="submit" class="btn btn-primary"><i class="mdi mdi-plus-circle"></i> 등록<span class="d-md-inline-block d-none">하기</span></button>
+                                </div>
+                            <form class="write-col-wrap">
+                                <div class="write-col col-12">
+                                    <label for="writer" class="write-label">작성자</label>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-control col-3" id="writer" value="관리자">
+                                    </div>
+                                </div>
+                                <div class="write-col col-12">
+                                    <label class="write-label">공지</label>
+                                    <div class="input-wrap">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="noti_chk">
+                                            <label class="form-check-label" for="noti_chk">공지</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="write-col col-12">
+                                    <label for="date" class="write-label">등록일</label>
+                                    <div class="input-wrap">
+                                        <input class="form-control" id="date" type="text" name="date">
+                                    </div>
+                                </div>
+                                <!-- <div class="write-col col-12">
+                                    <label for="views" class="write-label">조회</label>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-control" id="views"  data-toggle="input-mask" data-mask-format="000000000000">
+                                    </div>
+                                </div> -->
+                                <div class="write-col col-12">
+                                    <label class="write-label">푸쉬여부</label>
+                                    <div class="input-wrap">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="push_chk">
+                                            <label class="form-check-label" for="push_chk">푸쉬발송</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="write-col col-12">
+                                    <label for="title" class="write-label">제목</label>
+                                    <div class="input-wrap">
+                                        <input type="text" class="form-control" id="title" placeholder="제목">
+                                    </div>
+                                </div>
+                                <div class="write-col col-12 align-items-start">
+                                    <label for="simplemde1" class="write-label">내용</label>
+                                    <div class="input-wrap">
+                                        <textarea id="simplemde1"></textarea>
+                                    </div>
+                                </div>
+                                <div class="write-col col-12">
+                                    <label for="fileinput" class="write-label">첨부파일</label>
+                                    <div class="input-wrap">
+                                        <input type="file" id="fileinput" class="form-control">
+                                        <input type="file" id="fileinput2" class="form-control my-1">
+                                        <input type="file" id="fileinput3" class="form-control">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div> <!-- end card-body-->
+                    </div> <!-- end card-->
+                </div> <!-- end col -->
+            </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-write-footer.html')
+
+</body>
+
+</html>

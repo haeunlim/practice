@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "푸쉬관리"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-light"
+                                        onclick="location.href='board_push_list.html'"><i
+                                            class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></button>
+                                    <button type="submit" class="btn btn-primary"><i class="mdi mdi-plus-circle"></i>
+                                        등록<span class="d-md-inline-block d-none">하기</span></button>
+                                </div>
+                                <form action="/" method="post" class="write-col-wrap">
+                                    <div class="write-col col-12 col-md-7">
+                                        <label for="title" class="write-label">타이틀</label>
+                                        <div class="input-wrap">
+                                            <input type="text" class="form-control" id="title">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 col-md-7">
+                                        <label for="sortation" class="write-label">구분</label>
+                                        <div class="input-wrap">
+                                            <select class="form-select" id="sortation">
+                                                <option selected>구분선택</option>
+                                                <option>전체</option>
+                                                <option>파트너</option>
+                                                <option>일반회원</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="push_desc" class="write-label">푸쉬내용</label>
+                                        <div class="input-wrap">
+                                            <input type="text" class="form-control" id="push_desc" value="푸쉬내용이 들어갑니다">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-write-footer.html')
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "SMS 관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="write-col-wrap">
+                                    <div class="write-col col-12">
+                                        <label for="receiveTo" class="write-label">항목</label>
+                                        <div class="input-wrap">
+                                            <span class="d-inline-block">설문완료</span>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="auto_send" class="write-label">구분</label>
+                                        <div class="input-wrap">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="autoSend_ok" name="auto_send"
+                                                    class="form-check-input" checked>
+                                                <label class="form-check-label" for="autoSend_ok">자동발송</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="autoSend_none" name="auto_send"
+                                                    class="form-check-input">
+                                                <label class="form-check-label" for="autoSend_none">자동발송안함</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="desc" class="write-label">문자내역</label>
+                                        <div class="input-wrap">
+                                            <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="btn-wrap mx-auto mx-sm-0 ms-sm-auto mt-1">
+                                        <a class="btn btn-light" href="member_sms.html"><i class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></a>
+                                        <button type="button" class="btn btn-primary" onclick="location.href='board_notice_write.html'"><i class="mdi mdi-account-edit"></i> 수정<span class="d-md-inline-block d-none">하기</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include('./partials/title-meta.html')
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-auto">
+                                        <div class="input-group">
+                                            <select name="year" id="year" class="form-select">
+                                                <option value="" selected>2022년</option>
+                                                <option value="">2021년</option>
+                                                <option value="">2020년</option>
+                                                <option value="">2019년</option>
+                                            </select>
+                                            <select name="area" id="area" class="form-select">
+                                                <option value="" selected>라오스</option>
+                                                <option value="">???</option>
+                                                <option value="">???</option>
+                                                <option value="">???</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- top body -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered dt-responsive nowrap w-100"  data-chknon="true"  id="basic-datatable">
+                                        <thead class="table-light">
+                                            <tr>
+                                                <th>지역</th>
+                                                <th>사업진행</th>
+                                                <th style="width: 60%;">전체비율</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>프라빈스1</td>
+                                                <td>3</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">72% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 72%;" aria-valuenow="72" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스2</td>
+                                                <td>5</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">20% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스3</td>
+                                                <td>4</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">20% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스4</td>
+                                                <td>10</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">32% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 32%;" aria-valuenow="32" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스5</td>
+                                                <td>20</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">32% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 32%;" aria-valuenow="32" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스6</td>
+                                                <td>123</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">32% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 32%;" aria-valuenow="32" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>프라빈스7</td>
+                                                <td>123</td>
+                                                <td>
+                                                    <div class="progress-w-percent mb-0">
+                                                        <span class="progress-value fw-bold">32% </span>
+                                                        <div class="progress progress-sm">
+                                                            <div class="progress-bar" role="progressbar"
+                                                                style="width: 32%;" aria-valuenow="32" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end table-responsive-->
+
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+
+@@include('./partials/board-list-footer.html')
+</body>
+
+</html>

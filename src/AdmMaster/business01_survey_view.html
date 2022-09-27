@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "설문보기"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "설문보기 - 페이지 안나옴"})
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="btn-wrap text-end">
+                                           <button type="button" class="btn btn-danger"><i class="mdi mdi-delete"></i>
+                                            <span class="d-md-inline-block d-none">선택</span>삭제</button>
+                                        <button type="button" class="btn btn-success"><i class="mdi mdi-arrow-up-down"></i>
+                                            <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                        <button type="button" class="btn btn-primary"><i class="mdi mdi-plus-circle"></i>
+                                            <span class="d-md-inline-block d-none">사업</span>등록</button>
+                                    </div>
+                                <div class="search-form-wrap">
+                                    <form class="row gy-2 gx-1 gy-md-3 gx-md-2">
+                                        <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                            <label for="status-select" class="flex-shrink-0 search-labels">기간검색</label>
+                                            <div class="search-input-box">
+                                                <div id="reportrange" class="form-control" data-toggle="date-picker-range"
+                                                    data-target-display="#selectedValue" data-cancel-class="btn-light">
+                                                    <i class="mdi mdi-calendar"></i>&nbsp;<span id="selectedValue"></span> <i
+                                                        class="mdi mdi-menu-down"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                            <label for="area-select" class="flex-shrink-0 search-labels">지역검색</label>
+                                            <div class="search-input-box row gy-0 gx-1">
+                                                <div class="col-6">
+                                                    <select class="form-select" id="area-select">
+                                                        <option selected>국가선택</option>
+                                                        <option>국가선택</option>
+                                                        <option>국가선택</option>
+                                                        <option>국가선택</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6 pl-1">
+                                                    <select class="form-select" id="area-select2">
+                                                        <option selected>지역선택</option>
+                                                        <option>지역선택</option>
+                                                        <option>지역선택</option>
+                                                        <option>지역선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                            <label for="search_select" class="flex-shrink-0 search-labels">검색조건</label>
+                                            <div class="search-input-box row gy-0 gx-1">
+                                                <div class="col-4">
+                                                    <select class="form-select" id="search_select">
+                                                        <option selected>선택</option>
+                                                        <option>조사원 이름</option>
+                                                        <option>설문자 이름</option>
+                                                        <option>조사원 이메일</option>
+                                                        <option>설문자 이메일</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-8"><input type="search" class="form-control"
+                                                        id="search_title" placeholder="검색어를 입력하세요"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 d-flex flex-wrap align-items-center">
+                                            <label for=survey_state" class="flex-shrink-0 search-labels">상태</label>
+                                            <div class="search-input-box">
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id=survey_all" name=survey_state"
+                                                        class="form-check-input" checked>
+                                                    <label class="form-check-label" for=survey_all">전체</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id=survey_com" name=survey_state"
+                                                        class="form-check-input">
+                                                    <label class="form-check-label" for=survey_com">완료</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id=survey_ing" name=survey_state"
+                                                        class="form-check-input">
+                                                    <label class="form-check-label" for=survey_ing">진행중</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input type="radio" id=survey_can" name=survey_state"
+                                                        class="form-check-input">
+                                                    <label class="form-check-label" for=survey_can">취소</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-12 text-center">
+                                            <button type="button" class="btn btn-primary my-0"><i class="mdi mdi-magnify search-icon"></i> 검색<span class="d-md-inline-block d-none">하기</span></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-ellipsis="4" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th width="4%" data-orderable="false">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck1">
+                                                        <label class="form-check-label" for="customCheck1"></label>
+                                                    </div>
+                                                </th>
+                                                <th width="4%">번호</th>
+                                                <th width="6%" data-orderable="false">설문보기</th>
+                                                <th width="10%">조사원</th>
+                                                <th width="auto">조사원 이메일</th>
+                                                <th width="10%">설문자</th>
+                                                <th width="15%">지역</th>
+                                                <th width="6%">설문진행(No.)</th>
+                                                <th width="10%">상태</th>
+                                                <th width="10%">설문일시</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck2">
+                                                        <label class="form-check-label"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm">보기</button>
+                                                </td>
+                                                <td>
+                                                    <span>유아인</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess@naver.com</span>
+                                                </td>
+                                                <td>
+                                                    <span>무덕이</span>
+                                                </td>
+                                                <td>
+                                                    <span>라오스 > 프라빈스</span>
+                                                </td>
+                                                <td>
+                                                    <span>154</span>
+                                                </td>
+                                                <td>
+                                                    <select name="state_select" id="state_select" class="form-select">
+                                                        <option value="com" selected>완료</option>
+                                                        <option value="ing">진행</option>
+                                                        <option value="can">취소</option>
+                                                    </select>
+                                                </td>
+
+                                                <td>
+                                                    <span>2022-06-14 06:31:11</span>
+                                                </td>
+
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

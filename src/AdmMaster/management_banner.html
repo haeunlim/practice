@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "메인배너 관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "메인배너 관리"})
+                <!-- end page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="btn-wrap text-end">
+                                        <button type="button" class="btn btn-success"><i
+                                                class="mdi mdi-arrow-up-down"></i>
+                                            <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                        <button type="button" class="btn btn-primary"
+                                            onclick="location.href='management_banner_add.html'"><i
+                                                class="mdi mdi-plus-circle"></i> <span class="d-md-inline-block d-none">신규</span>등록</button>
+                                    </div>
+                                <!-- end row-->
+                                <div class="row align-items-baseline justify-content-between mt-4 mb-3">
+                                    <div class="col-auto">
+                                        <div class="list_info">총 3 개의 목록이 있습니다.</div>
+                                    </div>
+                                    <div class="col-auto">
+                                        <select class="form-select" id="sortation">
+                                            <option selected>배너선택</option>
+                                            <option>메인배너</option>
+                                            <option>메인중간배너</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <!-- 배너 카드 시작  -->
+                                <div class="row">
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap m-0 position-relative bg-light">
+                                                <h2 class="position-absolute top-50 start-50 translate-middle">No Image</h2>
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge bg-primary p-1">메인배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                    <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap position-relative m-0"
+                                                style="background-image: url(assets/images/projects/project-4.jpg)">
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge bg-primary p-1">메인배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                    <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap position-relative m-0"
+                                                style="background-image: url(assets/images/projects/project-3.jpg)">
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge bg-primary p-1">메인배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                    <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap m-0 position-relative bg-light">
+                                                <h2 class="position-absolute top-50 start-50 translate-middle">No Image</h2>
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge badge-outline-primary p-1">메인중간배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                   <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인중간배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap m-0 position-relative bg-light">
+                                                <h2 class="position-absolute top-50 start-50 translate-middle">No Image</h2>
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge badge-outline-primary p-1">메인중간배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                   <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인중간배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap m-0 position-relative bg-light">
+                                                <h2 class="position-absolute top-50 start-50 translate-middle">No Image</h2>
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge badge-outline-primary p-1">메인중간배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                   <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인중간배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i>
+                                                            관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+                                    <!-- 배너 카드 시작  -->
+                                    <div class="col-md-6 col-xxl-3">
+                                        <!-- project card -->
+                                        <div class="card d-block">
+                                            <!-- project-thumbnail -->
+                                            <figure class="banner-wrap position-relative m-0"
+                                                style="background-image: url(assets/images/projects/project-2.jpg)">
+                                            </figure>
+                                            <div class="card-img-overlay">
+                                                <div class="badge badge-outline-primary p-1">메인중간배너</div>
+                                            </div>
+
+                                            <div class="card-body position-relative">
+                                                <!-- project title-->
+                                                <h4 class="mt-0 text-title">
+                                                    제목이 나오는 곳입니다
+                                                </h4>
+
+                                                <!-- project detail-->
+                                                <div class="mb-3">
+                                                    <div class="pe-2 text-nowrap">
+                                                        <i class="mdi mdi-calendar-clock"></i>
+                                                        <b>등록일</b> : 2022-06-28 00:00:00
+                                                    </div>
+                                                   <div class="text-nowrap mt-1">
+                                                        <i class="mdi mdi-file-image"></i>
+                                                        <b>파일명</b> 메인중간배너.png
+                                                    </div>
+                                                </div>
+                                                <div class="row g-3">
+                                                    <div class="col-md-4" id="tooltip-container4">
+                                                        <input type="text" data-bs-container="#tooltip-container4"
+                                                            data-bs-toggle="tooltip" data-bs-placement="top"
+                                                            title="높은 숫자를 입력할수록 노출순위가 올라갑니다"
+                                                            class="d-inline-block form-control text-center" value="0">
+                                                    </div>
+                                                    <div class="col-md-8 ps-0 d-flex">
+                                                        <button class="btn col-6 me-1 btn-primary"
+                                                            onclick="location.href='management_banner_add.html'"><i
+                                                                class="mdi mdi-image-edit"></i> 관리</button>
+                                                        <button class="btn col-6 ml-1 btn-danger" data-bs-toggle="modal"
+                                                            data-bs-target="#primary-header-modal"><i
+                                                                class="mdi mdi-delete"></i>
+                                                            삭제</button>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- end card-body-->
+                                        </div> <!-- end card-->
+                                    </div> <!-- end col -->
+                                    <!-- 배너 카드 끝  -->
+
+                                </div>
+                                <!-- end row-->
+
+                            </div> <!-- container -->
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- content -->
+
+            @@include('./partials/footer.html')
+
+        </div>
+
+        <!-- ============================================================== -->
+        <!-- End Page content -->
+        <!-- ============================================================== -->
+
+
+    </div>
+    <!-- END wrapper -->
+
+
+    @@include('./partials/right-sidebar.html')
+    @@include('./partials/common-script.html')
+    </body>
+
+</html>

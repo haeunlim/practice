@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "1:1문의 카테고리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page category-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-success"><i class="mdi mdi-arrow-up-down"></i> <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='category04_write.html'"><i class="mdi mdi-plus-circle"></i> <span class="d-md-inline-block d-none">신규</span>등록</button>
+                                </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-chknon="true" id="basic-datatable" >
+                                        <thead>
+                                            <tr>
+                                                <th width="6%">번호</th>
+                                                <th width="6%">코드번호</th>
+                                                <th width="auto">코드명</th>
+                                                <th width="10%">DEPTH</th>
+                                                <th width="15%">하위갯수</th>
+                                                <th width="12%">현황</th>
+                                                <th width="10%">우선순위</th>
+                                                <th width="12%">관리</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>003</span>
+                                                </td>
+                                                <td>
+                                                    <span>제목</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>사용</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="10"></td>
+                                                <td>
+                                                    <a href="category04_sub.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                  <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>002</span>
+                                                </td>
+                                                <td>
+                                                    <span>제목</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>사용</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="10"></td>
+                                                <td>
+                                                    <a href="category04_sub.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                  <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>001</span>
+                                                </td>
+                                                <td>
+                                                    <span>제목</span>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>사용</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="10"></td>
+                                                <td>
+                                                    <a href="category04_sub.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                  <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

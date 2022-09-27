@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "팝업관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page category_list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#primary-header-modal"><i class="mdi mdi-delete"></i> <span class="d-md-inline-block d-none">선택</span>삭제</button>
+                                    <button type="button" class="btn btn-success"><i class="mdi mdi-arrow-up-down"></i> <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                    <button type="button" class="btn btn-primary" onclick="location.href='management_ip_add.html'"><i class="mdi mdi-plus-circle"></i> 등록<span class="d-md-inline-block d-none">하기</span></button>
+                                </div>
+                                <!-- top end -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-ellipsis="3" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" class="form-check-input" id="checkall" name="data_chk">
+                                                </th>
+                                                <th width="6%">번호</th>
+                                                <th width="15%">아이피</th>
+                                                <th width="auto">메모</th>
+                                                <th width="15%">사용유무</th>
+                                                <th width="12%">관리</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                              <td></td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>221.126.3.6</span>
+                                                </td>
+                                                <td>
+                                                    <span>메모가 나옵니다 메모가 나와요</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-primary"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <a href="management_ip_add.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                              <td></td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td>
+                                                    <span>221.126.3.6</span>
+                                                </td>
+                                                <td>
+                                                    <span>메모가 나옵니다 메모가 나와요</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-primary"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <a href="management_ip_add.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                              <td></td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>221.126.3.6</span>
+                                                </td>
+                                                <td>
+                                                    <span>메모가 나옵니다 메모가 나와요</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-primary"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <a href="management_ip_add.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                              <td></td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td>
+                                                    <span>221.126.3.6</span>
+                                                </td>
+                                                <td>
+                                                    <span>메모가 나옵니다 메모가 나와요</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-danger"></i> 사용안함</span>
+                                                </td>
+                                                <td>
+                                                    <a href="management_ip_add.html" class="action-icon"> <i
+                                                            class="mdi mdi-square-edit-outline"></i></a>
+                                                    <a href="javascript:void(0);" class="action-icon" data-bs-toggle="modal" data-bs-target="#primary-header-modal"> <i
+                                                            class="mdi mdi-delete"></i></a>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

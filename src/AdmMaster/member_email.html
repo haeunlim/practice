@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "이메일 관리"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <a href="member_email_send.html" class="btn btn-primary"><i
+                                            class="mdi mdi-email"></i> 개발/단체
+                                        메일발송</a>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100"
+                                        data-chknon="true" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th>메일코드</th>
+                                                <th width="50%">메일명</th>
+                                                <th>미리보기</th>
+                                                <th>자동발송여부</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span>A03</span>
+                                                </td>
+                                                <td>
+                                                    <span><a href="member_email_view.html">문의답변</a></span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#scrollable-modal">보기</button>
+                                                </td>
+                                                <td>
+                                                    자동발송
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span>A04</span>
+                                                </td>
+                                                <td>
+                                                    <span><a href="member_email_view.html">휴먼계정 전환</a></span>
+                                                </td>
+                                                <td>
+                                                    <button class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#scrollable-modal">보기</button>
+                                                </td>
+                                                <td>
+                                                    자동발송
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

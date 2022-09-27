@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "레포트"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "레포트"})
+                <!-- end page title -->
+
+
+
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- Profile -->
+                        <div class="card bg-primary">
+                            <div class="card-body profile-user-box">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <div>
+                                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                                        <h4 class="text-white">기본정보</h4>
+                                                        <button type="button" class="btn btn-light btn-sm">
+                                                            <i class="mdi mdi-printer me-1"></i> 프린트
+                                                        </button>
+                                                    </div>
+                                                    <ul class="mb-0 list-inline text-light">
+                                                        <li class="list-inline-item me-3">
+                                                            <h5 class="mb-1 text-white">라오스</h5>
+                                                            <p class="mb-0 font-13 text-white-50">지역</p>
+                                                        </li>
+                                                        <li class="list-inline-item  me-3">
+                                                            <h5 class="mb-1 text-white">홍순이</h5>
+                                                            <p class="mb-0 font-13 text-white-50">조사원</p>
+                                                        </li>
+                                                        <li class="list-inline-item  me-3">
+                                                            <h5 class="mb-1 text-white">김길동</h5>
+                                                            <p class="mb-0 font-13 text-white-50">설문자</p>
+                                                        </li>
+                                                        <li class="list-inline-item  me-3">
+                                                            <h5 class="mb-1 text-white">2022-06-16 00:00</h5>
+                                                            <p class="mb-0 font-13 text-white-50">조사일</p>
+                                                        </li>
+                                                        <li class="list-inline-item">
+                                                            <h5 class="mb-1 text-white">라오스 1차 농업 실태조사를 시작합니다.</h5>
+                                                            <p class="mb-0 font-13 text-white-50">사업명
+                                                            </p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!-- end col-->
+                                </div> <!-- end row -->
+
+                            </div> <!-- end card-body/ profile-user-box-->
+                        </div>
+                        <!--end profile/ card -->
+                    </div> <!-- end col-->
+                </div><!-- end row -->
+                <div class="row">
+                    <div class="col-xxl-3 col-xl-3 col-lg-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <h4 class="col-12 header-title mt-0 mb-3">성별 비율</h4>
+                                    <div class="col-12">
+                                        <div id="gender_group_ratio"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div> <!-- end col-->
+                    <div class="col-xxl-6 col-xl-5 col-lg-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mt-0 mb-3">연령대 비율</h4>
+                                <div id="age_group_ratio"></div>
+                            </div>
+                        </div>
+                    </div> <!-- end col-->
+                    <div class="col-xxl-3 col-xl-4 col-lg-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 class="header-title mb-3">지역별 조사 대상</h4>
+                                </div>
+
+                                <div id="region-chart" class="apex-charts"
+                                    data-colors="#727cf5,#0acf97,#fa5c7c,#ffbc00"></div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col-->
+                </div><!-- end row-->
+                <div class="row">
+                    <!-- Toll free number box-->
+                    <div class="card text-white bg-info overflow-hidden">
+                        <div class="card-body">
+                            <div class="toll-free-box text-center">
+                                <h4> <i class="mdi mdi-newspaper-check"></i>본 레포트는 설문 완료된 자료만 산출됩니다.</h4>
+                            </div>
+                        </div> <!-- end card-body-->
+                    </div> <!-- end card-->
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="header-title mb-3">설문문항 : 100개</h4>
+                            <div class="table-responsive">
+                                <table class="table" style="min-width:500px">
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>질문지</th>
+                                            <th>유형</th>
+                                            <th>선택</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>1. 질문을 선택해주세요</td>
+                                            <td>객관식</td>
+                                            <td>① 5건 ② 7건 ③40건 ④20건 ⑤10건</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>2. 위치를 입력해주세요</td>
+                                            <td>주관식</td>
+                                            <td>10건</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>3.매트릭스 설문지</td>
+                                            <td>매트릭스</td>
+                                            <td>10건</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>4. 제목이 나옵니다.</td>
+                                            <td>어의차형</td>
+                                            <td>강 10건 중 10건 약 10건</td>
+                                        </tr>
+
+                                    </tbody>
+                                </table>
+                            </div> <!-- end table responsive-->
+                        </div> <!-- end col-->
+                    </div> <!-- end row-->
+                </div>
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+
+
+<script src="assets/js/vendor/apexcharts.min.js"></script>
+<!-- third party js -->
+<script src="assets/js/vendor/chart.min.js"></script>
+<!-- third party js ends -->
+<script src="assets/js/pages/biodivChart.js"></script>
+
+
+</body>
+
+</html>

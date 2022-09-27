@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "사업 정보등록"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include('./partials/page-title.html')
+                <!-- end page title -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end">
+                                    <a href="business01.html" class="btn btn-light">
+                                        <i class="mdi mdi-format-list-bulleted"></i>
+                                        <span>목록<span class="d-md-inline-block d-none">으로</span></span>
+                                    </a>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="mdi mdi-plus-circle"></i>
+                                        <span>등록<span class="d-md-inline-block d-none">하기</span></span>
+                                    </button>
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="mdi mdi-delete"></i>
+                                        <span>삭제<span class="d-md-inline-block d-none">하기</span></span>
+                                    </button>
+                                </div>
+                                <form class="write-col-wrap row">
+                                    <h4>사업 정보등록</h4>
+                                    <div class="write-col col-md-6">
+                                        <label for="area_select" class="write-label">지역선택</label>
+                                        <div class="input-wrap">
+                                            <div class="row gx-1">
+                                                <div class="col-6">
+                                                    <select class="form-select" id="area_select">
+                                                        <option selected>국가선택</option>
+                                                        <option>국가선택</option>
+                                                        <option>국가선택</option>
+                                                        <option>국가선택</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="form-select" id="area_select2">
+                                                        <option selected>지역선택</option>
+                                                        <option>지역선택</option>
+                                                        <option>지역선택</option>
+                                                        <option>지역선택</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-md-6">
+                                        <label for="survey_type" class="write-label">조사유형</label>
+                                        <div class="input-wrap">
+                                            <div class="row gx-1">
+                                                <div class="col-6">
+                                                    <select class="form-select" id="survey_type">
+                                                        <option selected>농업</option>
+                                                        <option>농업</option>
+                                                        <option>농업</option>
+                                                        <option>농업</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-6">
+                                                    <select class="form-select" id="survey_type2">
+                                                        <option selected>벼농사</option>
+                                                        <option>벼농사</option>
+                                                        <option>벼농사</option>
+                                                        <option>벼농사</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="business_name" class="write-label">사업명</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="business_name" class="form-control"
+                                                value="라오스 1차 농업 설문조사">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="start_text" class="write-label">설문시작 문구</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="start_text" class="form-control" value="라오스 1차 농업 실태조사를 시작합니다.
+                                                ">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="end_text" class="write-label">설문종료 문구</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="end_text" class="form-control" value="라오스 1차 농업 실태조사를 종료합니다.
+                                            ">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="state" class="write-label">상태</label>
+                                        <div class="input-wrap">
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="state_ing" name="state" class="form-check-input"
+                                                    checked>
+                                                <label class="form-check-label" for="state_ing">진행중</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="state_stop" name="state"
+                                                    class="form-check-input">
+                                                <label class="form-check-label" for="state_stop">중지</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="state_comp" name="state"
+                                                    class="form-check-input">
+                                                <label class="form-check-label" for="state_comp">완료</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input type="radio" id="state_can" name="email_receive"
+                                                    class="form-check-input">
+                                                <label class="form-check-label" for="state_can">취소</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="start_date" class="write-label">사업진행일</label>
+                                        <div class="input-wrap">
+                                            <div class="d-flex flex-wrap align-items-center">
+                                                <div class="col-12 col-md-6">
+                                                    <input type="text" name="date_time" class="form-control date"
+                                                        id="daterangetime2" data-toggle="date-picker-time"
+                                                        data-time-picker="true"> </div>
+                                                <div class="form-check accordion">
+                                                    <input type="checkbox" id="reservation_chk" name="reservation_chk"
+                                                        class="form-check-input">
+                                                    <label class="form-check-label" for="reservation_chk">예약사용</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="admin_memo" class="write-label">관리자 메모</label>
+                                        <div class="input-wrap">
+                                                <textarea id="admin_memo" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+
+
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="btn-wrap text-end mb-4">
+                                    <button type="submit" class="btn btn-danger">
+                                        <i class="mdi mdi-delete"></i>
+                                        <span class="d-md-inline-block d-none">선택</span>삭제
+                                    </button>
+                                    <button type="button" class="btn btn-success"><i class="mdi mdi-arrow-up-down"></i>
+                                        <span class="d-md-inline-block d-none">순위</span>변경</button>
+                                    <button type="button" class="btn btn-primary"
+                                        onclick="location.href='business01_questionnaire.html'"><i
+                                            class="mdi mdi-plus-circle"></i> <span class="d-md-inline-block d-none">설문</span>등록</button>
+                                </div>
+                                <h4>설문 문항 등록</h4>
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100" data-ellipsis="3" id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th width="4%">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck1">
+                                                        <label class="form-check-label"
+                                                            for="customCheck1">&nbsp;</label>
+                                                    </div>
+                                                </th>
+                                                <th width="6%">설문번호</th>
+                                                <th width="8%">우선순위</th>
+                                                <th width="auto">제목</th>
+                                                <th width="8%">DEPTH</th>
+                                                <th width="12%">조건</th>
+                                                <th width="12%">설문유형</th>
+                                                <th width="12%">상태</th>
+                                                <th width="12%">등록일시</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck2">
+                                                        <label class="form-check-label"
+                                                            for="customCheck2">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>8</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="8"></td>
+                                                <td>
+                                                    <span>8. 답해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반</span>
+                                                </td>
+                                                <td>
+                                                    <span>단답형</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck3">
+                                                        <label class="form-check-label"
+                                                            for="customCheck3">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>7</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="7"></td>
+                                                <td>
+                                                    <span>7. 선택해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반</span>
+                                                </td>
+                                                <td>
+                                                    <span>드롭다운</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck4">
+                                                        <label class="form-check-label"
+                                                            for="customCheck4">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>6</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="6"></td>
+                                                <td>
+                                                    <span>6. 질문에 100자 이상 답해주세요.</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반/연관</span>
+                                                </td>
+                                                <td>
+                                                    <span>장문형</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-secondary"></i> 사용안함</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck5">
+                                                        <label class="form-check-label"
+                                                            for="customCheck5">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>5</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="5"></td>
+                                                <td>
+                                                    <span>5. 선택해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반/연관/추가</span>
+                                                </td>
+                                                <td>
+                                                    <span>객관식</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck6">
+                                                        <label class="form-check-label"
+                                                            for="customCheck6">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="4"></td>
+                                                <td>
+                                                    <span>4. 질문에 답해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>연관</span>
+                                                </td>
+                                                <td>
+                                                    <span>어의차형</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-warning"></i> 작성중</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck7">
+                                                        <label class="form-check-label"
+                                                            for="customCheck7">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>3</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="3"></td>
+                                                <td>
+                                                    <span>3. 선택해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반</span>
+                                                </td>
+                                                <td>
+                                                    <span>서열식</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck8">
+                                                        <label class="form-check-label"
+                                                            for="customCheck8">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="2"></td>
+                                                <td>
+                                                    <span>2. 귀하가 농업에 종사한 기간은?</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반</span>
+                                                </td>
+                                                <td>
+                                                    <span>체크리스트</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-27</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input"
+                                                            id="customCheck9">
+                                                        <label class="form-check-label"
+                                                            for="customCheck9">&nbsp;</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <span>1</span>
+                                                </td>
+                                                <td><input type="text" class="form-control" value="1"></td>
+                                                <td>
+                                                    <span>1. 이름을 입력해주세요</span>
+                                                </td>
+                                                <td>
+                                                    <span>2</span>
+                                                </td>
+                                                <td>
+                                                    <span>일반</span>
+                                                </td>
+                                                <td>
+                                                    <span>매트릭스</span>
+                                                </td>
+                                                <td>
+                                                    <span><i class="mdi mdi-circle text-success"></i> 사용</span>
+                                                </td>
+                                                <td>
+                                                    <span>2022-06-26</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- table wrap-->
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div><!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+</body>
+
+</html>

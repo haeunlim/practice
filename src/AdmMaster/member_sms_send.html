@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "SMS 발송"})
+
+    @@include('./partials/board-css.html')
+
+    @@include('./partials/head-css.html')
+    <style>
+        div.dataTables_wrapper div.dataTables_paginate{
+    display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    </style>
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page member-list">
+        <div class="content">
+            @@include('./partials/topbar.html')
+            <!-- Start Content-->
+            <div class="container-fluid">
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "SMS 발송"})
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="search-form-wrap mt-0">
+                                    <form class="row gy-1 gx-1 align-items-center">
+                                        <label for="email_grade" class="flex-shrink-0 col-sm-2">회원등급</label>
+                                        <div class="col-6 col-sm-2">
+                                            <select class="form-select" id="email_grade">
+                                                <option selected>선택</option>
+                                                <option>전체회원</option>
+                                                <option>수신동의회원</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-6 col-sm-2">
+                                            <select class="form-select" id="email_grade">
+                                                <option value="" selected="">선택</option>
+                                                <option value="user_name">회원명</option>
+                                                <option value="user_id">회원아이디</option>
+                                                <option value="user_mobile">휴대폰</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <input type="text" class="form-control" placeholder="검색해 주세요.">
+                                        </div>
+                                        <div class="col-12 col-sm-3 text-center text-md-start">
+                                            <button type="button" class="btn btn-primary my-0"><i
+                                                    class="mdi mdi-magnify search-icon"></i> 검색<spanblank
+                                                    class="d-md-inline-block d-none">하기</spanblank></button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-striped dt-responsive nowrap w-100"
+                                        id="basic-datatable">
+                                        <thead>
+                                            <tr>
+                                                <th width="60px">
+                                                    <input type="checkbox" class="form-check-input" id="checkall"
+                                                        name="data_chk">
+                                                </th>
+                                                <th>번호</th>
+                                                <th>등급</th>
+                                                <th>아이디</th>
+                                                <th>성명</th>
+                                                <th>전화번호</th>
+                                                <th>성별</th>
+                                                <th>연령</th>
+                                                <th>접속수</th>
+                                                <th>최근접속일</th>
+                                                <th>가입일</th>
+                                                <th>적립금</th>
+                                                <th>총구매금액</th>
+                                                <th>SMS수신</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <span>9</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>유아인</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>여</td>
+                                                <td>2023</td>
+                                                <td>1</td>
+                                                <td>2022-06-16<br>16:15</td>
+                                                <td>2022-06-12</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>
+                                                    수신거부
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <span>9</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>유아인</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>여</td>
+                                                <td>2023</td>
+                                                <td>1</td>
+                                                <td>2022-06-16<br>16:15</td>
+                                                <td>2022-06-12</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>
+                                                    수신거부
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td></td>
+                                                <td>
+                                                    <span>4</span>
+                                                </td>
+                                                <td>
+                                                    <span>9</span>
+                                                </td>
+                                                <td>
+                                                    <span>lifeess</span>
+                                                </td>
+                                                <td>
+                                                    <span>유아인</span>
+                                                </td>
+                                                <td>uwal@uwal.co.kr</td>
+                                                <td>여</td>
+                                                <td>2023</td>
+                                                <td>1</td>
+                                                <td>2022-06-16<br>16:15</td>
+                                                <td>2022-06-12</td>
+                                                <td>-</td>
+                                                <td>-</td>
+                                                <td>
+                                                    수신거부
+                                                </td>
+                                            </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="write-col-wrap">
+                                    <div class="write-col col-12">
+                                        <label for="receiveTo" class="write-label">수신대상</label>
+                                        <div class="input-wrap">
+                                            <span class="d-inline-block"><span>uwal</span><button class="border-0 bg-white"><i
+                                                        class="mdi mdi-close-circle text-primary"></i></button></span>
+                                            <span class="d-inline-block"><span>uwal</span><button
+                                                    class="border-0 bg-white"><i
+                                                        class="mdi mdi-close-circle text-primary"></i></button></span>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="receiveNum" class="write-label">수신번호<br class="d-md-block d-none"> (직접입력)</label>
+                                        <div class="input-wrap">
+                                            <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                            <span class="help-block mt-1 text-danger"><small>010-0000-0000, 휴대번호 직접 입력시 끝에
+                                                    콤마','를 꼭 넣으셔야합니다.</small></span>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="sender" class="write-label">발신자</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="sender" class="form-control" value="BIODIV">
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12">
+                                        <label for="callingNum" class="write-label">발신 번호</label>
+                                        <div class="input-wrap">
+                                            <input type="text" id="callingNum" class="form-control"
+                                                value="010-1234-5678" >
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 align-items-start">
+                                        <label for="desc" class="write-label">내용</label>
+                                        <div class="input-wrap">
+                                            <textarea class="form-control" id="example-textarea" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="write-col col-12 justify-content-end btn-wrap">
+                                        <button class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#send-sms-modal"><i class="mdi mdi-send-circle
+                                            "></i>
+                                            발송하기</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- END wrapper -->
+
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+@@include('./partials/board-list-footer.html')
+
+<script type="text/javascript">
+
+    $('#basic-datatable_paginate').prepend(
+        '<button class="btn btn-outline-primary btn-sm"><i class="mdi mdi-circle-plus"></i> 선택한 회원 추가</button>')
+   
+</script>
+
+</body>
+
+</html>

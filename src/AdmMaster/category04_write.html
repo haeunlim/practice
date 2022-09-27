@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    @@include("./partials/title-meta.html", {"title": "카테고리 등록"})
+    @@include('./partials/board-css.html')
+    @@include('./partials/head-css.html')
+
+</head>
+
+@@include('./partials/body.html')
+<!-- Begin page -->
+<div class="wrapper">
+    @@include('./partials/left-sidebar.html')
+
+    <!-- ============================================================== -->
+    <!-- Start Page Content here -->
+    <!-- ============================================================== -->
+
+    <div class="content-page">
+        <div class="content">
+            @@include('./partials/topbar.html')
+
+            <!-- Start Content-->
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                @@include("./partials/page-title.html", {"title": "카테고리 등록"})
+                <!-- end page title -->
+
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                    <div class="btn-wrap text-end">
+                                        <button type="button" class="btn btn-light" onclick="location.href='category04.html'"><i class="mdi mdi-format-list-bulleted"></i> 목록<span class="d-md-inline-block d-none">으로</span></button>
+                                        <button type="submit" class="btn btn-primary"><i class="mdi mdi-plus-circle"></i> 등록<span class="d-md-inline-block d-none">하기</span></button>
+                                    </div>
+                                
+                                <form class="write-col_wrap m-wd-50p">
+                                        <div class="write-col col-12">
+                                            <label for="code_num" class="write-label">코드No.</label>
+                                            <div class="input-wrap">
+                                               <span>18</span>
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="code_name" class="write-label">코드명</label>
+                                            <div class="input-wrap">
+                                                <input type="text" id="code_name" class="form-control" value="Code Name01">
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="situation" class="write-label">현황</label>
+                                            <div class="input-wrap">
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="situation_ing" name="situation"
+                                                            class="form-check-input" checked>
+                                                        <label class="form-check-label" for="situation_ing">사용</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="situation_deadline" name="situation"
+                                                            class="form-check-input" >
+                                                        <label class="form-check-label" for="situation_deadline">마감</label>
+                                                    </div>
+                                                    <div class="form-check form-check-inline">
+                                                        <input type="radio" id="situation_del" name="situation"
+                                                            class="form-check-input" >
+                                                        <label class="form-check-label" for="situation_del">삭제</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="write-col col-12">
+                                            <label for="priority" class="write-label">우선순위</label>
+                                            <div class="input-wrap">
+                                                <input type="text" id="priority" class="form-control" value="10">
+                                            </div>
+                                        </div>
+                                </form>
+                            </div> <!-- end card-body-->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- container -->
+
+        </div> <!-- content -->
+
+        @@include('./partials/footer.html')
+
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- End Page content -->
+    <!-- ============================================================== -->
+
+
+</div>
+<!-- END wrapper -->
+
+@@include('./partials/right-sidebar.html')
+@@include('./partials/common-script.html')
+</body>
+
+</html>
